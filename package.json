@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "NODE_ENV='production' webpack --progress",
     "start": "webpack-dev-server",
     "test": "jest --watch"
   },
