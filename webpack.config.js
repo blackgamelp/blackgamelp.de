@@ -33,7 +33,7 @@ let config = {
 			},
 
 			{
-				test: /.*\.(gif|png|jpe?g|svg)$/i,
+				test: /.*\.(svg)$/i,
 				loaders: [
 					'file-loader',
 					{
@@ -41,13 +41,32 @@ let config = {
 						query: {
 							progressive: true,
 							mozjpeg: {
-								quality: 45
+								quality: 75
 							},
 							optipng:{
 								optimizationLevel: 7,
 							},
 						}
 					}
+				]
+			},
+      {
+				test: /.*\.(gif|png|jpe?g)$/i,
+				loaders: [
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						query: {
+							progressive: true,
+							mozjpeg: {
+								quality: 75
+							},
+							optipng:{
+								optimizationLevel: 7,
+							},
+						}
+					},
+          'image-maxsize-webpack-loader'
 				]
 			}
 

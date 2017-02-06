@@ -6,7 +6,7 @@ import TimelineItem from './components/TimlineItem';
 import SkillItem from './components/SkillItem';
 import styles from './styles/base.sass';
 
-import HeroImage from './img/hero.jpg';
+import HeroImage from './img/hero.jpg?max-width=1920';
 import Avatar from './img/avatar.jpg';
 import BabelLogo from './img/babel.svg';
 import GoogleCloud from './img/google-cloud.svg';
@@ -14,7 +14,6 @@ import ReactLogo from './img/react.svg';
 import WebpackLogo from './img/icon-square-small-slack.png';
 
 console.log('Hey :) '); // eslint-disable-line no-console
-
 
 ReactDom.render(
     <div className={styles.app}>
