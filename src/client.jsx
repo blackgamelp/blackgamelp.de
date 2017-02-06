@@ -13,9 +13,25 @@ import GoogleCloud from './img/google-cloud.svg';
 import ReactLogo from './img/react.svg';
 import WebpackLogo from './img/icon-square-small-slack.png';
 
-console.log('Hey :) '); // eslint-disable-line no-console
+console.log('Hey :) want to see how its made? do you want the source code? then click https://github.com/blackgamelp/blackgamelp.de/ '); // eslint-disable-line no-console
 
-ReactDom.render(
+class App extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {imprint:false};
+	}
+	openModal(e){
+		e.preventDefault();
+		this.setState({imprint:true});
+	}
+	closeModal(e){
+		e.preventDefault();
+		if(e.target.getAttribute('class') === styles.ModalBackground || e.target.getAttribute('class') === styles.ModalClose ){
+			this.setState({imprint:false});
+		}
+	}
+	render(){
+		return (
     <div className={styles.app}>
         <div className={styles.Header + ' ' + styles.ActiveHeader}>
             <div className={styles.Content}>
@@ -143,7 +159,7 @@ ReactDom.render(
         </div>
         <div className={styles.Footer} style={{backgroundImage: 'url(\''+HeroImage+'\')'}} >
             <div className={styles.Content}>
-                &copy; 2017 Steffen Meyer - <a href="#">Imprint</a><br />
+                &copy; 2017 Steffen Meyer - <a href="#" onClick={this.openModal.bind(this)}>Imprint</a><br />
                 <div className={styles.SocialMediaButtons}>
                     <a href='https://github.com/blackgamelp/blackgamelp.de' target="_blank" ><div className={styles.FooterSocialMediaButton}>Source Code?</div></a>
                     <a href='https://github.com/blackgamelp' target="_blank" ><div className={styles.FooterSocialMediaButton}>Github</div></a>
@@ -151,5 +167,46 @@ ReactDom.render(
                 </div>
             </div>
         </div>
-    </div>,
+        {
+            this.state.imprint ? <div className={styles.ModalBackground} onClick={this.closeModal.bind(this)}>
+            <div className={styles.Modal}>
+                <div className={styles.ModalClose} onClick={this.closeModal.bind(this)}>X</div>
+                <div className={styles.ModalHeader}>Imprint</div>
+                <div className={styles.ModalContent}>
+                    <p>Steffen Meyer<br />
+                    Heerenhusstraße 7a<br />26465 Langeoog</p>
+                    <p>Telefon: 04972 344<br />
+                    E-Mail: <a href="mailto:admin@blackgamelp.de">admin@blackgamelp.de</a><br />
+                    </p>
+                    <br /><br /><h2>Disclaimer – rechtliche Hinweise</h2>
+                    § 1 Warnhinweis zu Inhalten<br />
+                    Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der bereitgestellten kostenlosen und frei zugänglichen journalistischen Ratgeber und Nachrichten. Namentlich gekennzeichnete Beiträge geben die Meinung des jeweiligen Autors und nicht immer die Meinung des Anbieters wieder. Allein durch den Aufruf der kostenlosen und frei zugänglichen Inhalte kommt keinerlei Vertragsverhältnis zwischen dem Nutzer und dem Anbieter zustande, insoweit fehlt es am Rechtsbindungswillen des Anbieters.<br />
+                    <br />
+                    § 2 Externe Links<br />
+                    Diese Website enthält Verknüpfungen zu Websites Dritter ("externe Links"). Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem Zeitpunkt waren keine Rechtsverstöße ersichtlich. Der Anbieter hat keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der verknüpften Seiten. Das Setzen von externen Links bedeutet nicht, dass sich der Anbieter die hinter dem Verweis oder Link liegenden Inhalte zu Eigen macht. Eine ständige Kontrolle der externen Links ist für den Anbieter ohne konkrete Hinweise auf Rechtsverstöße nicht zumutbar. Bei Kenntnis von Rechtsverstößen werden jedoch derartige externe Links unverzüglich gelöscht.<br />
+                    <br />
+                    § 3 Urheber- und Leistungsschutzrechte<br />
+                    Die auf dieser Website veröffentlichten Inhalte unterliegen dem deutschen Urheber- und Leistungsschutzrecht. Jede vom deutschen Urheber- und Leistungsschutzrecht nicht zugelassene Verwertung bedarf der vorherigen schriftlichen Zustimmung des Anbieters oder jeweiligen Rechteinhabers. Dies gilt insbesondere für Vervielfältigung, Bearbeitung, Übersetzung, Einspeicherung, Verarbeitung bzw. Wiedergabe von Inhalten in Datenbanken oder anderen elektronischen Medien und Systemen. Inhalte und Rechte Dritter sind dabei als solche gekennzeichnet. Die unerlaubte Vervielfältigung oder Weitergabe einzelner Inhalte oder kompletter Seiten ist nicht gestattet und strafbar. Lediglich die Herstellung von Kopien und Downloads für den persönlichen, privaten und nicht kommerziellen Gebrauch ist erlaubt.<br />
+                    <br />
+                    Die Darstellung dieser Website in fremden Frames ist nur mit schriftlicher Erlaubnis zulässig.<br />
+                    <br />
+                    § 4 Besondere Nutzungsbedingungen<br />
+                    Soweit besondere Bedingungen für einzelne Nutzungen dieser Website von den vorgenannten Paragraphen abweichen, wird an entsprechender Stelle ausdrücklich darauf hingewiesen. In diesem Falle gelten im jeweiligen Einzelfall die besonderen Nutzungsbedingungen.<p>Quelle: Juraforum.de - Impressum <a href="http://www.juraforum.de/impressum-generator/">hier</a> kostenlos online erstellen.</p>
+                
+                </div>
+            </div>
+        </div>: null
+        }
+    </div>);
+	}
+}
+
+
+
+ReactDom.render(<App />,
     document.getElementById('root'));
+
+
+
+
+

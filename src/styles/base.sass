@@ -11,6 +11,19 @@ html,body
     font-size: 16px
     line-height: 1.5em
     overflow-x: hidden
+    height: 100%
+
+::-webkit-scrollbar
+    z-index: 9999999
+    background: #fff
+    width: 10px
+    position: fixed
+    &-track
+        background: rgba(#000, 0.1)
+    &-thumb
+        background: rgba(#000, 0.5)
+    
+
 
 a
     color: rgba(#fff, 0.5)
@@ -51,6 +64,11 @@ a
     max-width: 800px
     margin: auto
 
+.app
+    overflow: auto
+    position: absolute
+    width: 100%
+    height: 100%
 
 .Header
     width: 100%
@@ -58,7 +76,7 @@ a
     padding: 10px
     // background: rgba(#000, 0.3)
     position: absolute
-    z-index: 9999
+    z-index: 999
     box-sizing: border-box
 
 .Navigation
@@ -273,3 +291,46 @@ a
         background: rgba(#2196F3, 0.5)
         &:hover
             background: rgba(#2196F3, 0.7)
+
+.ModalBackground
+    position: fixed
+    background: rgba(#000, 0.5)
+    height: 100%
+    width: 100%
+    top: 0
+    z-index: 99999
+.Modal
+    position: fixed
+    height: 90%
+    width: 50%
+    background: #fff
+    top: 5%
+    left: 25%
+    border-radius: 5px
+    box-shadow: 0px 5px 20px -10px rgba(#000, 0.9)
+    color: rgba(#000, 0.9)
+    .ModalClose
+        color: rgba(#000, 0.5)
+        font-size: 32px
+        font-weight: bolder
+        padding: 10px
+        float: right
+        user-select: none
+        transition: color .05s ease-in
+        &:hover
+            cursor: pointer
+            color: rgba(#000, 0.9)
+    .ModalHeader
+        text-align: center
+        padding: 10px
+        font-size: 24px
+        font-weight: bold
+    .ModalContent
+        padding: 25px
+        width: 100%
+        height: calc(100% - 70px)
+        overflow: auto
+        a
+            color: rgba(#000, 0.5)
+            &:hover
+                color: rgba(#000,0.9)
