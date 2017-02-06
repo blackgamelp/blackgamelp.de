@@ -15,10 +15,25 @@ import WebpackLogo from './img/icon-square-small-slack.png';
 
 console.log('Hey :) want to see how its made? do you want the source code? then click https://github.com/blackgamelp/blackgamelp.de/ '); // eslint-disable-line no-console
 
+
+
 class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {imprint:false};
+	}
+	send() {
+		let email = this.contactEmail.value;
+		let content = this.contactMsg.value;
+		let name = this.contactName.value;
+		this.contactEmail.value = '';
+		this.contactMsg.value = '';
+		this.contactName.value = '';
+		var ajx = new XMLHttpRequest();
+		ajx.open('POST', 'https://formspree.io/admin@blackgamelp.de', true);
+		ajx.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		ajx.send('name='+name+'&_replyto='+email+'&message='+content);
+		
 	}
 	openModal(e){
 		e.preventDefault();
@@ -29,6 +44,11 @@ class App extends React.Component {
 		if(e.target.getAttribute('class') === styles.ModalBackground || e.target.getAttribute('class') === styles.ModalClose ){
 			this.setState({imprint:false});
 		}
+	}
+	navigateTo(name){
+		let elem = document.getElementById(name);
+		elem.scrollIntoView({behavior: 'smooth'});
+        
 	}
 	render(){
 		return (
@@ -41,9 +61,9 @@ class App extends React.Component {
                     </div>
                 </div>
                 <div className={styles.Navigation}>
-                    <div className={styles.NavItem}>About</div>
-                    <div className={styles.NavItem}>Showcase</div>
-                    <div className={styles.NavItem}>Contact</div>
+                    <div className={styles.NavItem} onClick={this.navigateTo.bind(this,'about')} >About</div>
+                    {/**<div className={styles.NavItem}>Showcase</div>**/}
+                    <div className={styles.NavItem} onClick={this.navigateTo.bind(this,'contact')}>Contact</div>
                 </div>
             </div>
         </div>
@@ -54,7 +74,7 @@ class App extends React.Component {
                     <div className={styles.HeroSubTitle}>FRONTEND // USER INTERFACE // JAVASCRIPT</div>
                 </div>
             </div>
-            <div className={styles.ContentBox + ' ' + styles.AboutBox} style={{background:'#fff'}}>
+            <div id="about" className={styles.ContentBox + ' ' + styles.AboutBox} style={{background:'#fff'}}>
                 <div className={styles.Content}>
                     <div className={styles.ContentBoxHeader}>About Me</div>
                     <div className={styles.ProductIcon} style={{float:'left'}}>
@@ -66,7 +86,7 @@ class App extends React.Component {
                     <div className={styles.Avatar}>
                         <div className={styles.hexagon}>
                             <div className={styles.hexagon1}><div className={styles.hexagon2} style={{backgroundImage: 'url(\''+Avatar+'\')'}} /></div>
-                        </div>
+                        </div>Msg
                     </div>
                     <div className={styles.ProductIcon} style={{float:'right'}}>
                         <a href="https://cloud.google.com/"><img src={GoogleCloud} /></a>                   
@@ -145,14 +165,14 @@ class App extends React.Component {
             </div>
                 
             */}
-            <div className={styles.ContentBox}>
+            <div id="contact" className={styles.ContentBox}>
                 <div className={styles.Content}>
                     <div className={styles.ContentBoxHeader}>Contact</div>
                     <div className={styles.ContactWrapper}>
-                        <textarea placeholder="Write you message :)" />
-                        <input type="email" placeholder="email" /><br/>
-                        <input type="text" placeholder="your name" /><br />
-                        <button >Send</button>
+                        <textarea ref={(input)=>{this.contactMsg = input;}} placeholder="Write you message :)" />
+                        <input ref={(input)=>{this.contactEmail = input;}} type="email" placeholder="email" /><br/>
+                        <input ref={(input)=>{this.contactName = input;}} type="text" placeholder="your name" /><br />
+                        <button onClick={this.send.bind(this)} >Send</button>
                     </div>
                 </div>
             </div>
