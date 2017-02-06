@@ -77,23 +77,28 @@ class App extends React.Component {
             <div id="about" className={styles.ContentBox + ' ' + styles.AboutBox} style={{background:'#fff'}}>
                 <div className={styles.Content}>
                     <div className={styles.ContentBoxHeader}>About Me</div>
-                    <div className={styles.ProductIcon} style={{float:'left'}}>
-                        <a href="https://webpack.js.org"><img src={WebpackLogo} /></a>               
-                    </div>
-                    <div className={styles.ProductIcon} style={{float:'left'}}>
-                        <a href="https://facebook.github.io/react/"><img src={ReactLogo} /></a>               
-                    </div>
                     <div className={styles.Avatar}>
                         <div className={styles.hexagon}>
                             <div className={styles.hexagon1}><div className={styles.hexagon2} style={{backgroundImage: 'url(\''+Avatar+'\')'}} /></div>
-                        </div>Msg
+                        </div>
                     </div>
-                    <div className={styles.ProductIcon} style={{float:'right'}}>
-                        <a href="https://cloud.google.com/"><img src={GoogleCloud} /></a>                   
+                    <div className={styles.AboutLeft}>
+                        <div className={styles.ProductIcon}>
+                            <a href="https://webpack.js.org"><img src={WebpackLogo} /></a>               
+                        </div>
+                        <div className={styles.ProductIcon}>
+                            <a href="https://facebook.github.io/react/"><img src={ReactLogo} /></a>               
+                        </div>
                     </div>
-                    <div className={styles.ProductIcon} style={{float:'right'}}>
-                        <a href="http://babeljs.io/"><img src={BabelLogo} /></a>                   
+                    <div className={styles.AboutRight}>
+                        <div className={styles.ProductIcon}>
+                            <a href="https://cloud.google.com/"><img src={GoogleCloud} /></a>                   
+                        </div>
+                        <div className={styles.ProductIcon}>
+                            <a href="http://babeljs.io/"><img src={BabelLogo} /></a>                   
+                        </div>
                     </div>
+                    <div className={styles.clearfix} />
                     <p>
                         <b>Minim tempor sint sunt excepteur ea dolor tempor aliquip incididunt consequat.</b> Lorem et ullamco do esse velit et sint duis aute occaecat anim minim aute. Eiusmod voluptate fugiat elit ullamco eu ut veniam cillum.
                         Minim tempor sint sunt excepteur ea dolor tempor aliquip incididunt consequat. Lorem et ullamco do esse velit et sint duis aute occaecat anim minim aute. Eiusmod voluptate fugiat elit ullamco eu ut veniam cillum.
