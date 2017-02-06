@@ -6,7 +6,15 @@ import TimelineItem from './components/TimlineItem';
 import SkillItem from './components/SkillItem';
 import styles from './styles/base.sass';
 
+import HeroImage from './img/hero.jpg';
+import Avatar from './img/avatar.jpg';
+import BabelLogo from './img/babel.svg';
+import GoogleCloud from './img/google-cloud.svg';
+import ReactLogo from './img/react.svg';
+import WebpackLogo from './img/icon-square-small-slack.png';
+
 console.log('Hey :) '); // eslint-disable-line no-console
+
 
 ReactDom.render(
     <div className={styles.app}>
@@ -14,7 +22,7 @@ ReactDom.render(
             <div className={styles.Content}>
                 <div className={styles.Logo}>
                     <div className={styles.hexagon}>
-                        <div className={styles.hexagon1}><div className={styles.hexagon2} /></div>
+                        <div className={styles.hexagon1}><div className={styles.hexagon2} style={{backgroundImage: 'url(\''+Avatar+'\')'}} /></div>
                     </div>
                 </div>
                 <div className={styles.Navigation}>
@@ -25,7 +33,7 @@ ReactDom.render(
             </div>
         </div>
         <div className={styles.ContentWrapper}>
-            <div className={styles.Hero}>
+            <div className={styles.Hero} style={{backgroundImage: 'url(\''+HeroImage+'\')'}}>
                 <div className={styles.HeroContent}>
                     <div className={styles.HeroTitle}>CREATING ...</div>
                     <div className={styles.HeroSubTitle}>FRONTEND // USER INTERFACE // JAVASCRIPT</div>
@@ -35,21 +43,21 @@ ReactDom.render(
                 <div className={styles.Content}>
                     <div className={styles.ContentBoxHeader}>About Me</div>
                     <div className={styles.ProductIcon} style={{float:'left'}}>
-                        <a href="https://webpack.js.org"><img src="https://raw.githubusercontent.com/webpack/webpack.js.org/master/assets/icon-square-small-slack.png" /></a>               
+                        <a href="https://webpack.js.org"><img src={WebpackLogo} /></a>               
                     </div>
                     <div className={styles.ProductIcon} style={{float:'left'}}>
-                        <a href="https://facebook.github.io/react/"><img src="react.svg" /></a>               
+                        <a href="https://facebook.github.io/react/"><img src={ReactLogo} /></a>               
                     </div>
                     <div className={styles.Avatar}>
                         <div className={styles.hexagon}>
-                            <div className={styles.hexagon1}><div className={styles.hexagon2} /></div>
+                            <div className={styles.hexagon1}><div className={styles.hexagon2} style={{backgroundImage: 'url(\''+Avatar+'\')'}} /></div>
                         </div>
                     </div>
                     <div className={styles.ProductIcon} style={{float:'right'}}>
-                        <a href="https://cloud.google.com/"><img src="google-cloud.svg" /></a>                   
+                        <a href="https://cloud.google.com/"><img src={GoogleCloud} /></a>                   
                     </div>
                     <div className={styles.ProductIcon} style={{float:'right'}}>
-                        <a href="http://babeljs.io/"><img src="babel.svg" /></a>                   
+                        <a href="http://babeljs.io/"><img src={BabelLogo} /></a>                   
                     </div>
                     <p>
                         <b>Minim tempor sint sunt excepteur ea dolor tempor aliquip incididunt consequat.</b> Lorem et ullamco do esse velit et sint duis aute occaecat anim minim aute. Eiusmod voluptate fugiat elit ullamco eu ut veniam cillum.
@@ -134,7 +142,7 @@ ReactDom.render(
                 </div>
             </div>
         </div>
-        <div className={styles.Footer}>
+        <div className={styles.Footer} style={{backgroundImage: 'url(\''+HeroImage+'\')'}} >
             <div className={styles.Content}>
                 &copy; 2017 Steffen Meyer - <a href="#">Imprint</a><br />
                 <div className={styles.SocialMediaButtons}>

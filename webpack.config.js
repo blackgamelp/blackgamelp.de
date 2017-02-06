@@ -31,6 +31,27 @@ let config = {
 				test: /\.sass$/,
 				loader: 'style-loader!css-loader?module&localIdentName=[hash:base64:5]!sass-loader?indentedSyntax&outputStyle=compressed',
 			},
+
+			{
+				test: /.*\.(gif|png|jpe?g|svg)$/i,
+				loaders: [
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						query: {
+							progressive: true,
+							mozjpeg: {
+								quality: 45
+							},
+							optipng:{
+								optimizationLevel: 7,
+							},
+						}
+					}
+				]
+			}
+
+
 		],
 	},
 
