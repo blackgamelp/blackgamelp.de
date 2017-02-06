@@ -1,0 +1,273 @@
+@import 'normalize'
+@import 'imports'
+
+*
+    box-sizing: border-box
+    &:focus
+        outline: 0
+html,body
+    background: #151515
+    color: rgba(#fff, 0.9)
+    font-size: 16px
+    line-height: 1.5em
+
+a
+    color: rgba(#fff, 0.5)
+    text-decoration: none
+    transition: color .05s ease-in
+    &:hover
+        color: rgba(#fff, 0.9)
+.clearfix
+  &:before
+    content: ""
+    display: table
+  &:after
+    content: ""
+    display: table
+    clear: both
+  zoom: 1
+.hexagon
+  overflow: hidden
+  visibility: hidden
+  transform: rotate(120deg)
+  cursor: pointer
+
+.hexagon1
+  overflow: hidden
+  width: 100%
+  height: 100%
+  transform: rotate(-60deg)
+
+.hexagon2
+  width: 100%
+  height: 100%
+  background-repeat: no-repeat
+  background-position: 50%
+  visibility: visible
+  transform: rotate(-60deg)
+
+.Content
+    max-width: 800px
+    margin: auto
+
+
+.Header
+    width: 100vw
+    height: 100px
+    padding: 10px
+    // background: rgba(#000, 0.3)
+    position: absolute
+    z-index: 9999
+
+.Navigation
+    font-size: 20px
+    line-height: 80px
+    font-weight: bold
+    &:after
+        clear: both
+    .NavItem
+        float: left
+        margin-right: 40px
+        color: rgba(#000, 0.7)
+        transition: color .05s ease-in
+        &:hover
+            color: rgba(#000, 1)
+            cursor: pointer
+
+.ActiveHeader
+    background: rgba(#fff, 1)
+    box-shadow: 0px 0px 5px rgba(#000, 0.9)
+
+
+
+
+.Logo
+    height: 80px
+    width: 80px
+    overflow: hidden
+    float: left
+    margin-right: 40px
+    position: relative
+    opacity: 0.9
+    transition: transform .05s ease-in, opacity .1s ease-out
+    .hexagon
+        height: 160px
+        width: 80px
+        margin-top: -40px
+        position: absolute
+        .hexagon2
+            background-image: url("/avatar.jpg") 
+            background-size: 80px
+    &:hover
+        opacity: 1
+    &:active
+        transform: skewX(-7deg) skewY(-7deg)
+            
+
+.Hero
+    background: url("/hero.jpg") center center
+    background-size: cover
+    height: 100vh
+    .HeroContent
+        padding-top: calc(50vh - 4em)
+        text-align: center
+    .HeroTitle
+        text-align: center
+        font-size: 8em
+        line-height: 1em
+        padding: 15px
+        border: 10px solid #fff
+        display: inline-block
+        margin: auto
+        background: rgba(#000, 0.15)
+        font-weight: bold
+    .HeroSubTitle
+        font-size: 18px
+        margin-top: 15px
+        font-weight: bold
+
+.Footer
+    background: url("/hero.jpg") center bottom
+    background-size: cover
+    height: 100px
+    padding-top: 15px
+    text-align: center
+    line-height: 16px
+    color: rgba(#fff, 0.7)
+    .SocialMediaButtons
+        display: inline-block
+        margin-top: 10px
+        .FooterSocialMediaButton
+            float: left
+            display: inline-block
+            margin-right: 20px
+            color: rgba(#fff, 0.6)
+            transition: color .05s ease-in
+            &:hover
+                color: rgba(#fff, 0.9)
+
+.ContentBox
+    padding: 15px
+    position: relative
+.ContentBoxHeader
+    margin-bottom: 25px
+    font-size: 20px
+    color: rgba(#2196F3, 0.8)
+    text-align: center
+    clear: both
+.AboutBox
+    color: rgba(#000, 0.9)
+    text-align: center
+    font-size: 18px
+    .ProductIcon
+        height: 200px
+        width: 150px
+        padding: 15px
+        padding-top: 65px
+        img
+            height: 120px
+            width: 120px
+            
+    .Avatar
+        height: 200px
+        width: 200px
+        overflow: hidden
+        display: inline-block
+        .hexagon
+            height: 400px
+            width: 200px
+            margin-top: -100px
+            position: absolute
+            .hexagon2
+                background-image: url("/avatar.jpg") 
+                background-position: center center
+    p
+        padding: 25px 0px
+        text-align: left
+        color: rgba(#000, 0.7)
+        font-weight: lighter
+        b
+            font-weight: bold
+.SkillItems
+    height: 320px
+.SkillItem
+    // background: pink
+    width: 400px
+    height: 70px
+    padding: 15px
+    float: left
+    .SkillItemBarWrapper
+        background: rgba(#000, 0.2)
+        height: 15px
+        width: 100%
+        margin-bottom: 5px
+        .SkillItemBar
+            height: 100%
+            width: 90%
+            background: rgba(#2196F3, 0.8)
+    span
+        color: rgba(#000, 0.7)
+
+.TimeLineWrapper
+    height: 350px
+    width: 100%
+    background: rgba(#000, 0.2)
+    overflow: hidden
+    span
+        font-size: 64px
+        line-height: 350px
+        padding: 10px
+
+.TimeLineItem
+	height: 100%
+	width: 100%
+	padding: 50px 125px
+
+.TimeListItemHeader
+    font-size: 24px
+    line-height: 1.5em
+    display: block
+
+.TimeListItemSubject
+    font-size: 18px
+    line-height: 1.5em
+    color: rgba(#fff, 0.7)
+
+.TimeListItemTime
+  	font-size: 16px
+  	line-height: 1.5em
+  	color: rgba(#fff ,0.5)
+  	float: right
+  	p
+    	font-size: 16px
+    	line-height: 1.5em
+    	&:after
+      		clear: both 
+        
+.ContactWrapper
+    textarea
+        float: left
+        width: calc(50% - 10px)
+        height: 150px
+        background: rgba(#fff, 0.1)
+        border: none
+        padding: 10px
+        color: rgba(#fff, 0.9)
+        resize: none
+    input, button
+        clear: both
+        width: calc(50% - 10px)
+        height: 40px
+        margin-bottom: 15px
+        margin-left: 20px
+        background: rgba(#fff, 0.1)
+        border: none
+        padding: 10px
+        color: rgba(#fff, 0.9)
+        transition: background .05s ease-in
+        &:hover
+            background: rgba(#fff, 0.2)
+    button
+        background: rgba(#2196F3, 0.5)
+        &:hover
+            background: rgba(#2196F3, 0.7)

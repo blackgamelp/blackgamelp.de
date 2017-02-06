@@ -1,0 +1,76 @@
+.TimeLineWrapper
+	height: 350px
+	width: 100%
+	background: rgba(#000, 0.2)
+	overflow: hidden
+	position: relative
+	span
+		font-size: 64px
+		line-height: 350px
+		padding: 10px
+		color: rgba(#fff, 0.7)
+		user-select: none
+		transition: color .05s ease-in
+		&:hover
+			color: rgba(#fff, 1)
+			cursor: pointer
+		&:active
+			color: rgba(#2196F3, 0.9)
+
+.TimeLineItem
+	height: 100%
+	width: 100%
+	padding: 50px 125px
+
+.TimeListItemHeader
+    font-size: 24px
+    line-height: 1.5em
+    display: block
+
+.TimeListItemSubject
+    font-size: 18px
+    line-height: 1.5em
+    color: rgba(#fff, 0.7)
+
+.TimeListItemTime
+  	font-size: 16px
+  	line-height: 1.5em
+  	color: rgba(#fff ,0.5)
+  	float: right
+  	p
+    	font-size: 16px
+    	line-height: 1.5em
+    	&:after
+      		clear: both 
+.hide
+	display: none
+
+.TimeLineProgress
+	height: 5px
+	width: 100%
+	background: rgba(#fff, 0.1)
+	position: absolute
+	bottom: 0
+	.TimeLineProgressBar
+		height: 100%
+		width: 100%
+		background: rgba(#2196F3, 0.5)
+
+
+.SkillItem
+    // background: pink
+    width: 400px
+    height: 70px
+    padding: 15px
+    float: left
+    .SkillItemBarWrapper
+        background: rgba(#000, 0.2)
+        height: 15px
+        width: 100%
+        margin-bottom: 5px
+        .SkillItemBar
+            height: 100%
+            width: 90%
+            background: rgba(#2196F3, 0.8)
+    span
+        color: rgba(#000, 0.7)
