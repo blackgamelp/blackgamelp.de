@@ -31,7 +31,7 @@ class App extends React.Component {
 		this.contactName.value = '';
 		var ajx = new XMLHttpRequest();
 		ajx.open('POST', 'https://formspree.io/admin@blackgamelp.de', true);
-		ajx.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		ajx.setRequestHeader('Content-type', 'application/json');
 		ajx.send('name='+name+'&_replyto='+email+'&message='+content);
 		
 	}
