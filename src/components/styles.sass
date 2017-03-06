@@ -58,22 +58,38 @@
 
 
 .SkillItem
-    // background: pink
-    width: 400px
-    height: 70px
-    padding: 15px
-    float: left
-    .SkillItemBarWrapper
-        background: rgba(#000, 0.2)
-        height: 15px
-        width: 100%
-        margin-bottom: 5px
-        .SkillItemBar
-            height: 100%
-            width: 90%
-            background: rgba(#2196F3, 0.8)
-    span
-        color: rgba(#000, 0.7)
+	position: relative
+	width: 400px
+	height: 70px
+	padding: 15px
+	float: left
+	&:hover
+		.SkillItemDescription
+			opacity: 1
+	.SkillItemBarWrapper
+		background: rgba(#000, 0.2)
+		height: 15px
+		width: 100%
+		margin-bottom: 5px
+		.SkillItemBar
+			height: 100%
+			width: 90%
+			background: rgba(#2196F3, 0.8)
+	span
+		color: rgba(#000, 0.7)
+.SkillItemDescription
+	background: #fff
+	position: absolute
+	bottom: 35px
+	left: 50%
+	padding: 10px
+	min-width: 200px
+	box-shadow: 3px 4px 6px -3px rgba(#000, 0.5)
+	font-size: 16px
+	pointer-events: none
+	opacity: 0
+	transition: opacity 0.3s ease-in
+	transition-delay: 0.3s
 @media screen and (max-width: 900px)
     .SkillItem
         width: 320px

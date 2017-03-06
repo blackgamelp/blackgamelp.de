@@ -107,24 +107,25 @@ class App extends React.Component {
                                 </p>
                                 <div className={styles.ContentBoxHeader}>Tech - Skills</div>
                                 <div className={styles.SkillItems}>
-                                    <SkillItem name="HTML" value="95" />
-                                    <SkillItem name="CSS" value="90" />
-                                    <SkillItem name="JAVASCRIPT / ES6" value="80" />
-                                    <SkillItem name="PHP" value="55" />
-                                    <SkillItem name="Python" value="55" />
-                                    <SkillItem name="Go" value="15" />
-                                    <SkillItem name="Photoshop" value="60" />
-                                    <SkillItem name="Illustrator" value="60" />
+                                    <SkillItem name="HTML" value="95" description="" />
+                                    <SkillItem name="CSS / SASS" value="90" description="" />
+                                    <SkillItem name="JAVASCRIPT / ES6" value="80" description="" />
+                                    <SkillItem name="PHP" value="55" description="" />
+                                    <SkillItem name="Python" value="55" description="" />
+                                    <SkillItem name="Go" value="15" description="" />
+                                    <SkillItem name="Photoshop" value="60" description="" />
+                                    <SkillItem name="Illustrator" value="60" description="" />
+                                    <SkillItem name="Adobe XD" value="35" description="if you dont know, this is the prototypingtool from Adobe" />
+                                    <SkillItem name="Docker" value="15" description="" />
+                                    <SkillItem name="Google Cloud" value="10" description="Using it for hosting this site (GC Storage)" />
                                 </div>
 
                                 <div className={styles.ContentBoxHeader}>Soft - Skills</div>
                                 <div className={styles.SkillItems}>
-                                    <SkillItem name="Adaptability" value="75" />
-                                    <SkillItem name="Critical thinking" value="80" />
-                                    <SkillItem name="Empathy" value="85" />
-                                    <SkillItem name="Willingness to learn" value="90" />
-                                    
-                                    
+                                    <SkillItem name="Adaptability" value="75" description="" />
+                                    <SkillItem name="Critical thinking" value="80" description="" />
+                                    <SkillItem name="Empathy" value="85" description="" />
+                                    <SkillItem name="Willingness to learn" value="90" description="I really like to learn new things! except their are sorta useless" />
                                 </div>
                                 
                             </div>
@@ -137,7 +138,8 @@ class App extends React.Component {
                                         time = "September 2016 - now"
                                         location = "React Slides"
                                         subject = "-"
-                                        content = "Non et excepteur Lorem sit. Quis nisi occaecat cillum ex quis. Esse non excepteur aute proident qui elit. Id eu dolor id reprehenderit incididunt dolore enim elit."
+                                        content = {`This is a Platform like slides.com, it only will have more features like charts.
+                                            You can try the prototype of the viewer here: rslide.blackgamelp.de`}
                                         />
                                     <TimelineItem 
                                         time = "August 2014 - July 2016"
@@ -155,7 +157,7 @@ class App extends React.Component {
                                         time = "August 2004 - July 2014"
                                         location = "Inselschule Langeoog"
                                         subject = "-"
-                                        content = "Non et excepteur Lorem sit. Quis nisi occaecat cillum ex quis. Esse non excepteur aute proident qui elit. Id eu dolor id reprehenderit incididunt dolore enim elit."
+                                        content = "Where i had 5 years computer science and 3 years technology."
                                         />
                                 </Timeline>
                             </div>
