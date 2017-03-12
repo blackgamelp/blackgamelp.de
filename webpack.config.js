@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const path = require('path');
 let config = {
 	entry: {
@@ -12,9 +12,12 @@ let config = {
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({name: "commons", filename: "commons.js",}),
-		new ServiceWorkerWebpackPlugin({
-			entry: path.join(__dirname, 'src/service-worker.js'),
-		}),
+		new SWPrecacheWebpackPlugin(
+			{
+				cacheId: "blackgamelp.de-1",
+				filename: "service-worker.js",
+			}
+		),
 	],
 	module: {
 		loaders: [

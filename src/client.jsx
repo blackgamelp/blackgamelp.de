@@ -13,16 +13,8 @@ import GoogleCloud from './img/google-cloud.svg';
 import ReactLogo from './img/react.svg';
 import WebpackLogo from './img/icon-square-small-slack.png';
 
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
-
-if ('serviceWorker' in navigator) {
-  const registration = runtime.register();
-}
-
 
 console.log('Hey :) want to see how its made? do you want the source code? then click https://github.com/blackgamelp/blackgamelp.de/ '); // eslint-disable-line no-console
-
-
 
 
 
