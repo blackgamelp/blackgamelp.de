@@ -1,13 +1,21 @@
 const webpack = require('webpack');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const path = require('path');
 let config = {
-	entry: ['babel-polyfill', './src/client.jsx'],
+	entry: {
+		app: './src/client.jsx',
+	},
 	output: {
 		path: path.join(__dirname, 'build'),
-		filename: 'app.js',
+		filename: '[name].js',
 		publicPath: '/',
 	},
-	plugins: [],
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({name: "commons", filename: "commons.js",}),
+		new ServiceWorkerWebpackPlugin({
+			entry: path.join(__dirname, 'src/service-worker.js'),
+		}),
+	],
 	module: {
 		loaders: [
 			{
