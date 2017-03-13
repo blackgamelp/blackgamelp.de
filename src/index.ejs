@@ -11,14 +11,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Steffen Meyer - FRONTEND // USER INTERFACE // JAVASCRIPT</title>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <meta name="theme-color" content="#fff">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="data:;base64,=">
         <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
-        }
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('service-worker.js');
+            }
         </script>
     </head>
     <body>
@@ -26,8 +27,5 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="root"></div>
-        <script async src="commons.js"></script>
-        <script async src="service-worker.js"></script>
-        <script async src="app.js"></script>
     </body>
 </html>

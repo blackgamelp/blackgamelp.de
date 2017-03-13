@@ -86,18 +86,18 @@ class App extends React.Component {
                                 </div>
                                 <div className={styles.AboutLeft}>
                                     <div className={styles.ProductIcon}>
-                                        <a href="https://webpack.js.org"><img src={WebpackLogo} /></a>               
+                                        <a href="https://webpack.js.org"><img src={WebpackLogo} alt='Webpack Logo' /></a>               
                                     </div>
                                     <div className={styles.ProductIcon}>
-                                        <a href="https://facebook.github.io/react/"><img src={ReactLogo} /></a>               
+                                        <a href="https://facebook.github.io/react/"><img src={ReactLogo} alt='React Logo' /></a>               
                                     </div>
                                 </div>
                                 <div className={styles.AboutRight}>
                                     <div className={styles.ProductIcon}>
-                                        <a href="https://cloud.google.com/"><img src={GoogleCloud} /></a>                   
+                                        <a href="https://cloud.google.com/"><img src={GoogleCloud} alt='Google Cloud Logo' /></a>                   
                                     </div>
                                     <div className={styles.ProductIcon}>
-                                        <a href="http://babeljs.io/"><img src={BabelLogo} /></a>                   
+                                        <a href="http://babeljs.io/"><img src={BabelLogo} alt='Babel Logo' /></a>                   
                                     </div>
                                 </div>
                                 <div className={styles.clearfix} />
@@ -190,9 +190,9 @@ class App extends React.Component {
                         <div className={styles.Content}>
                             &copy; 2017 Steffen Meyer - <a href="#" onClick={this.openModal.bind(this)}>Imprint</a><br />
                             <div className={styles.SocialMediaButtons}>
-                                <a href='https://github.com/blackgamelp/blackgamelp.de' target="_blank" ><div className={styles.FooterSocialMediaButton}>Source Code?</div></a>
-                                <a href='https://github.com/blackgamelp' target="_blank" ><div className={styles.FooterSocialMediaButton}>Github</div></a>
-                                <a href='https://soundcloud.com/steves-dead' target="_blank" ><div className={styles.FooterSocialMediaButton}>Soundcloud</div></a>
+                                <a href='https://github.com/blackgamelp/blackgamelp.de' rel="noopener" target="_blank" ><div className={styles.FooterSocialMediaButton}>Source Code?</div></a>
+                                <a href='https://github.com/blackgamelp' rel="noopener" target="_blank" ><div className={styles.FooterSocialMediaButton}>Github</div></a>
+                                <a href='https://soundcloud.com/steves-dead' rel="noopener" target="_blank" ><div className={styles.FooterSocialMediaButton}>Soundcloud</div></a>
                             </div>
                         </div>
                     </div>

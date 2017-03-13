@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const path = require('path');
 let config = {
 	entry: {
@@ -11,13 +13,20 @@ let config = {
 		publicPath: '/',
 	},
 	plugins: [
-		new webpack.optimize.CommonsChunkPlugin({name: "commons", filename: "commons.js",}),
 		new SWPrecacheWebpackPlugin(
 			{
 				cacheId: "blackgamelp.de-1",
 				filename: "service-worker.js",
 			}
 		),
+		new HtmlWebpackPlugin({
+			title: 'Steffen Meyer - FRONTEND // USER INTERFACE // JAVASCRIPT',
+			template: 'src/index.ejs',
+		}),
+		new ScriptExtHtmlWebpackPlugin({
+			sync: ['service-worker.js'],
+			defaultAttribute: 'async'
+		})
 	],
 	module: {
 		loaders: [
